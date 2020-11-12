@@ -11,6 +11,7 @@ cd <ROOT_DIR>/server <br/>
 mvnw spring-boot:run
 ## Client
 cd <ROOT_DIR>/client <br/>
+npm install <br/>
 ng serve --open
 # Run the Integration Tests
 cd <ROOT_DIR>/server <br/>
