@@ -8,7 +8,7 @@ npm install -g @angular/cli@1.7.4
 # Run the Application
 ## Server
 cd <ROOT_DIR>/server <br/>
-./mvnw spring-boot:run
+mvnw spring-boot:run
 ## Client
 cd <ROOT_DIR>/client <br/>
 ng serve --open
