@@ -1,0 +1,47 @@
+<div *ngIf="error" class="alert alert-danger">{{error}}</div>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" [(ngModel)]="user.first_name" 
+          class="form-control" 
+          id="first_name" 
+          name="first_name" 
+          placeholder="Enter your first name"
+          required #first_name="ngModel">
+      </div>
+	  <div [hidden]="!first_name.pristine" class="alert alert-danger">First name is required</div>
+	  <div class="form-group">
+        <label for="last_name">Last name</label>
+        <input type="text" [(ngModel)]="user.last_name" 
+          class="form-control" 
+          id="last_name" 
+          name="last_name" 
+          placeholder="Enter your last name"
+          required #last_name="ngModel">
+      </div>
+      <div [hidden]="!last_name.pristine" class="alert alert-danger">Last name is required</div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" [(ngModel)]="user.email" 
+          class="form-control" 
+          id="email" 
+          name="email" 
+          placeholder="Enter your email address"
+          required #email="ngModel">
+      </div>
+	  <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
+	  <div class="form-group">
+        <label for="birth_date">Birth Date</label>
+        <input type="text" [(ngModel)]="user.birth_date" 
+          class="form-control" 
+          id="birth_date" 
+          name="birth_date" 
+          placeholder="Enter your birth date (YYYY-MM-DD)">
+      </div>
+      <button type="submit" [disabled]="!userForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
